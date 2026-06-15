@@ -1,4 +1,8 @@
 using Serilog;
+using Microsoft.EntityFrameworkCore;
+using ProductsAPI.Infrastructure.Data;
+using ProductsAPI.Application.Interfaces;
+
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -11,6 +15,11 @@ try
     builder.Host.UseSerilog((ctx, lc) => lc
     .ReadFrom.Configuration(ctx.Configuration)
     .WriteTo.Console());
+
+    builder.Services.AddDbContext<ApplicationDbContext>(options =>
+      options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    
+    builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();

@@ -29,7 +29,7 @@ namespace ProductsAPI.Application.DTOs
         public string Role { get; set; } = string.Empty;
     }
 
-    public class RefreshTokenDTo
+    public class RefreshTokenDto
     {
       public string RefreshToken { get; set; } = string.Empty;
 

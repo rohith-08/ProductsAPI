@@ -23,7 +23,7 @@ public class JwtTokenService
         var secretKey = jwtSettings["SecretKey"]!;
         var issuer = jwtSettings["Issuer"]!;
         var audience = jwtSettings["Audience"]!;
-        var expiryMinutes = int.Parse(jwtSettings["ExpiryMinutes"]!);
+        var expiryMinutes = int.Parse(jwtSettings["ExpirationMinutes"]!);
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
         var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

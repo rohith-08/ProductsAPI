@@ -14,8 +14,8 @@ namespace ProductsAPI.Application.Mappings
         public MappingProfile()
         {
             CreateMap<Product, ProductDto>();
-            CreateMap <CreateProductDto,ProductDto>();
-           CreateMap<UpdateProductDto,ProductDto>();
+            CreateMap <CreateProductDto,Product>();
+           CreateMap<UpdateProductDto,Product>();
 
 
             CreateMap<Item, ItemDto>();

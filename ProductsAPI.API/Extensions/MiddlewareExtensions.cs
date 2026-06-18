@@ -9,5 +9,11 @@ namespace ProductsAPI.API.Extensions
         {
             return app.UseMiddleware<ExceptionHandlingMiddleware>();
         }
+
+        public static IApplicationBuilder UseSecurityHeaders(this IApplicationBuilder app)
+        {
+            return app.UseMiddleware<SecurityHeadersMiddleware>();
+        }
+
     }
 }

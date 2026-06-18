@@ -122,8 +122,8 @@ try
     // CORS
     builder.Services.AddCors(options =>
     {
-        options.AddPolicy("AllowAll", policy =>
-            policy.AllowAnyOrigin()
+        options.AddPolicy("AllowSpecificOrigins", policy =>
+            policy.WithOrigins("http://localhost:3000", "https://localhost:3000")
                   .AllowAnyMethod()
                   .AllowAnyHeader());
     });
@@ -136,11 +136,11 @@ try
         app.UseSwaggerUI();
     }
 
-    
+    app.UseSecurityHeaders();
     app.UseGlobalExceptionHandling();
 
     app.UseSerilogRequestLogging();
-    app.UseCors("AllowAll");
+    app.UseCors("AllowSpecificOrigins");
     app.UseHttpsRedirection();
     app.UseAuthentication();
     app.UseAuthorization();

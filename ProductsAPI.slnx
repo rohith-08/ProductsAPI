@@ -1,6 +1,9 @@
 <Solution>
+  <Project Path="ProductsAPI.API.Tests/ProductsAPI.API.Tests.csproj" Id="b841044f-a135-428c-9c50-a6e75b9f03a1" />
   <Project Path="ProductsAPI.API/ProductsAPI.API.csproj" />
+  <Project Path="ProductsAPI.Application.Tests/ProductsAPI.Application.Tests.csproj" Id="60109a87-16f1-4bef-98a9-794cfa02cd7f" />
   <Project Path="ProductsAPI.Application/ProductsAPI.Application.csproj" />
   <Project Path="ProductsAPI.Domain/ProductsAPI.Domain.csproj" />
+  <Project Path="ProductsAPI.Infrastructure.Tests/ProductsAPI.Infrastructure.Tests.csproj" Id="f2bd36c6-1f04-4a4c-af66-ebd9c37f8c3e" />
   <Project Path="ProductsAPI.Infrastructure/ProductsAPI.Infrastructure.csproj" />
 </Solution>

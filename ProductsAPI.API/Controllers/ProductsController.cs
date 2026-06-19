@@ -48,8 +48,7 @@ namespace ProductsAPI.API.Controllers
         {
             var createdBy = User.Identity?.Name ?? "system";
             var product = await _productService.CreateAsync(dto, createdBy);
-            return Ok(product);
-
+            return CreatedAtAction(nameof(GetById), new { id = product.Id, version = "1.0" }, product);
         }
         [HttpPut("{id:int}")]
         public async Task<ActionResult<ProductDto>> Update(int id, [FromBody] UpdateProductDto dto)
